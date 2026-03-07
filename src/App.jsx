@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -5,12 +6,11 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Stars from './components/Stars'
 import Particles from './components/Particles'
+import PhoneNumberDetail from './pages/PhoneNumberDetail'
 
-function App() {
+function HomePage() {
     return (
-        <div className="relative min-h-screen">
-            <Stars />
-            <Particles />
+        <>
             <Navbar />
             <main>
                 <Hero />
@@ -20,6 +20,19 @@ function App() {
                 <Contact />
             </main>
             <Footer />
+        </>
+    )
+}
+
+function App() {
+    return (
+        <div className="relative min-h-screen">
+            <Stars />
+            <Particles />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/number/:slug" element={<PhoneNumberDetail />} />
+            </Routes>
         </div>
     )
 }
