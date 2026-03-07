@@ -41,7 +41,7 @@ function PhoneNumberDetail() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <div
-        className="w-full max-w-[650px] rounded-2xl overflow-hidden border border-primary-600/30 animate-fade-in-up"
+        className="w-full max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl rounded-2xl md:rounded-3xl overflow-hidden border border-primary-600/30 animate-fade-in-up"
         style={{
           background: "linear-gradient(145deg, #1a1030, #0d0818)",
           boxShadow: "0 15px 35px rgba(147, 51, 234, 0.15)",
@@ -49,7 +49,7 @@ function PhoneNumberDetail() {
       >
         {/* Header */}
         <div
-          className="px-6 pt-10 pb-5 text-center relative"
+          className="px-4 sm:px-6 md:px-10 pt-10 md:pt-14 pb-5 md:pb-8 text-center relative"
           style={{
             background:
               "radial-gradient(circle at top, rgba(147, 51, 234, 0.15), transparent)",
@@ -62,7 +62,7 @@ function PhoneNumberDetail() {
 
           {/* Phone Number */}
           <h1
-            className="text-4xl sm:text-5xl font-bold tracking-wider my-3"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider my-4 md:my-6"
             style={{
               background:
                 "linear-gradient(to right, #a855f7, #d8b4fe, #7c3aed, #c4b5fd, #6d28d9)",
@@ -77,7 +77,7 @@ function PhoneNumberDetail() {
           {/* Rank & Score */}
           <div className="flex items-baseline justify-center gap-4">
             <span
-              className="text-5xl font-bold text-emerald-400"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-emerald-400"
               style={{ textShadow: "0 0 15px rgba(52, 211, 153, 0.5)" }}
             >
               {phone.rank}
@@ -89,7 +89,7 @@ function PhoneNumberDetail() {
         </div>
 
         {/* Content */}
-        <div className="px-6 sm:px-10 pb-10">
+        <div className="px-5 sm:px-8 md:px-12 pb-10 md:pb-14">
           {/* Descriptions Section */}
           <div className="flex items-center gap-2.5 text-lg font-semibold text-primary-400 mt-6 mb-4 pb-2 border-b border-primary-500/30">
             <span>✨</span>
@@ -128,14 +128,14 @@ function PhoneNumberDetail() {
                     <p className="text-gray-200 text-[0.95rem] leading-relaxed mb-4">
                       {item.text}
                     </p>
-                    <div className="flex items-center gap-4">
-                      <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1">
+                      <div className="flex-1 h-2.5 bg-gray-800 rounded-full overflow-hidden w-full">
                         <div
                           className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full"
                           style={{ width: `${item.weight}%` }}
                         ></div>
                       </div>
-                      <div className="text-primary-300 font-medium text-sm whitespace-nowrap">
+                      <div className="text-primary-300 font-medium text-sm sm:text-base whitespace-nowrap text-right">
                         น้ำหนัก {item.weight}%
                       </div>
                     </div>
